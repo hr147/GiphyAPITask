@@ -72,6 +72,7 @@
 		4D1E198227DE02F00030F01D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4D1EBE6727D66CD3009AA428 /* Info.plist */,
 				4D1EBE6427D66CD3009AA428 /* LaunchScreen.storyboard */,
 				4D1EBE6227D66CD3009AA428 /* Assets.xcassets */,
 			);
@@ -127,14 +128,10 @@
 		4D1EBE5827D66CD1009AA428 /* GiphyAPITask */ = {
 			isa = PBXGroup;
 			children = (
+				4DD6D86D27DE483A006CD909 /* AppSetup */,
 				4D1E198327DE03060030F01D /* Common */,
 				4D1E198227DE02F00030F01D /* Resources */,
-				4D1EBE5927D66CD1009AA428 /* AppDelegate.swift */,
-				4D1EBE5B27D66CD1009AA428 /* SceneDelegate.swift */,
-				4D1EBE5D27D66CD1009AA428 /* GiphyViewController.swift */,
-				4D1EBE5F27D66CD1009AA428 /* Main.storyboard */,
-				4D1EBE6727D66CD3009AA428 /* Info.plist */,
-				4D1E199127DE32650030F01D /* GiphyCollectionViewCell.swift */,
+				4DD6D86E27DE4854006CD909 /* Features */,
 			);
 			path = GiphyAPITask;
 			sourceTree = "<group>";
@@ -152,6 +149,41 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4DD6D86D27DE483A006CD909 /* AppSetup */ = {
+			isa = PBXGroup;
+			children = (
+				4D1EBE5B27D66CD1009AA428 /* SceneDelegate.swift */,
+				4D1EBE5927D66CD1009AA428 /* AppDelegate.swift */,
+			);
+			path = AppSetup;
+			sourceTree = "<group>";
+		};
+		4DD6D86E27DE4854006CD909 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				4DD6D86F27DE48F2006CD909 /* Giphy */,
+				4DD6D87027DE4902006CD909 /* GiphyDetail */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		4DD6D86F27DE48F2006CD909 /* Giphy */ = {
+			isa = PBXGroup;
+			children = (
+				4D1E199127DE32650030F01D /* GiphyCollectionViewCell.swift */,
+				4D1EBE5D27D66CD1009AA428 /* GiphyViewController.swift */,
+				4D1EBE5F27D66CD1009AA428 /* Main.storyboard */,
+			);
+			path = Giphy;
+			sourceTree = "<group>";
+		};
+		4DD6D87027DE4902006CD909 /* GiphyDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GiphyDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,7 +466,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GiphyAPITask/Info.plist;
+				INFOPLIST_FILE = GiphyAPITask/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -461,7 +493,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GiphyAPITask/Info.plist;
+				INFOPLIST_FILE = GiphyAPITask/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

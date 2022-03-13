@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "FLAnimatedImage",
+        "repositoryURL": "https://github.com/Flipboard/FLAnimatedImage",
+        "state": {
+          "branch": null,
+          "revision": "e7f9fd4681ae41bf6f3056db08af4f401d61da52",
+          "version": "1.0.16"
+        }
+      },
+      {
+        "package": "Nuke",
+        "repositoryURL": "https://github.com/kean/Nuke.git",
+        "state": {
+          "branch": null,
+          "revision": "78fa963b8491fc520791d8c2a509f1b8593d8aae",
+          "version": "10.7.1"
+        }
+      },
+      {
+        "package": "NukeFLAnimatedImagePlugin",
+        "repositoryURL": "https://github.com/kean/Nuke-FLAnimatedImage-Plugin",
+        "state": {
+          "branch": null,
+          "revision": "b59c346a7d536336db3b0f12c72c6e53ee709e16",
+          "version": "8.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

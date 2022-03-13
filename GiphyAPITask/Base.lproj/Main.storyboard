@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NgL-Dp-h1R">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Giphy View Controller-->
+        <scene sceneID="mer-Mx-qZC">
+            <objects>
+                <collectionViewController id="NgL-Dp-h1R" customClass="GiphyViewController" customModule="GiphyAPITask" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="cym-7H-cfV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BSy-PP-SCh">
+                            <size key="itemSize" width="44" height="44"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GiphyCollectionViewCell" id="tLG-iM-wTj" customClass="GiphyCollectionViewCell" customModule="GiphyAPITask" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="o1t-QP-9wo">
+                                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="jtO-0C-IrI" customClass="FLAnimatedImageView">
+                                            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="jtO-0C-IrI" secondAttribute="bottom" id="4sM-Gb-q7D"/>
+                                        <constraint firstItem="jtO-0C-IrI" firstAttribute="leading" secondItem="o1t-QP-9wo" secondAttribute="leading" id="hAF-Ds-yk1"/>
+                                        <constraint firstAttribute="trailing" secondItem="jtO-0C-IrI" secondAttribute="trailing" id="p8w-Bx-Rra"/>
+                                        <constraint firstItem="jtO-0C-IrI" firstAttribute="top" secondItem="o1t-QP-9wo" secondAttribute="top" id="sak-tZ-1aR"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="44" height="44"/>
+                                <connections>
+                                    <outlet property="giphyImageView" destination="jtO-0C-IrI" id="3Mg-Kw-jbX"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="NgL-Dp-h1R" id="t9q-bY-geg"/>
+                            <outlet property="delegate" destination="NgL-Dp-h1R" id="5pl-gn-xmX"/>
+                        </connections>
+                    </collectionView>
+                    <connections>
+                        <outlet property="collectionViewFlowLayout" destination="BSy-PP-SCh" id="aty-r7-2nf"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F5N-uP-rUe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="-537"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="placeholder" width="150" height="150"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

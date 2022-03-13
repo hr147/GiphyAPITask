@@ -16,10 +16,18 @@
 		4D1EBE5A27D66CD1009AA428 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1EBE5927D66CD1009AA428 /* AppDelegate.swift */; };
 		4D1EBE5C27D66CD1009AA428 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1EBE5B27D66CD1009AA428 /* SceneDelegate.swift */; };
 		4D1EBE5E27D66CD1009AA428 /* GiphyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1EBE5D27D66CD1009AA428 /* GiphyViewController.swift */; };
-		4D1EBE6127D66CD1009AA428 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D1EBE5F27D66CD1009AA428 /* Main.storyboard */; };
+		4D1EBE6127D66CD1009AA428 /* Giphy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D1EBE5F27D66CD1009AA428 /* Giphy.storyboard */; };
 		4D1EBE6327D66CD3009AA428 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D1EBE6227D66CD3009AA428 /* Assets.xcassets */; };
 		4D1EBE6627D66CD3009AA428 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D1EBE6427D66CD3009AA428 /* LaunchScreen.storyboard */; };
 		4D1EBE7127D66CD3009AA428 /* GiphyAPITaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1EBE7027D66CD3009AA428 /* GiphyAPITaskTests.swift */; };
+		4DD6D87527DE4A9E006CD909 /* UIKit+ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D87227DE4A9E006CD909 /* UIKit+ReuseIdentifier.swift */; };
+		4DD6D87627DE4A9E006CD909 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D87327DE4A9E006CD909 /* UIViewController+Extension.swift */; };
+		4DD6D87727DE4A9E006CD909 /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D87427DE4A9E006CD909 /* UIStoryboard+Extension.swift */; };
+		4DD6D87B27DE4B93006CD909 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D87927DE4B93006CD909 /* BaseCoordinator.swift */; };
+		4DD6D87C27DE4B93006CD909 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D87A27DE4B93006CD909 /* Coordinator.swift */; };
+		4DD6D87E27DE4BAF006CD909 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D87D27DE4BAF006CD909 /* AppCoordinator.swift */; };
+		4DD6D88027DE4BED006CD909 /* GiphyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D87F27DE4BED006CD909 /* GiphyCoordinator.swift */; };
+		4DD6D88227DE4C7E006CD909 /* GiphyViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D88127DE4C7E006CD909 /* GiphyViewControllerFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,12 +50,20 @@
 		4D1EBE5927D66CD1009AA428 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D1EBE5B27D66CD1009AA428 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4D1EBE5D27D66CD1009AA428 /* GiphyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyViewController.swift; sourceTree = "<group>"; };
-		4D1EBE6027D66CD1009AA428 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4D1EBE6027D66CD1009AA428 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Giphy.storyboard; sourceTree = "<group>"; };
 		4D1EBE6227D66CD3009AA428 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D1EBE6527D66CD3009AA428 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D1EBE6727D66CD3009AA428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D1EBE6C27D66CD3009AA428 /* GiphyAPITaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GiphyAPITaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D1EBE7027D66CD3009AA428 /* GiphyAPITaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyAPITaskTests.swift; sourceTree = "<group>"; };
+		4DD6D87227DE4A9E006CD909 /* UIKit+ReuseIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+ReuseIdentifier.swift"; sourceTree = "<group>"; };
+		4DD6D87327DE4A9E006CD909 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		4DD6D87427DE4A9E006CD909 /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
+		4DD6D87927DE4B93006CD909 /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		4DD6D87A27DE4B93006CD909 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		4DD6D87D27DE4BAF006CD909 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		4DD6D87F27DE4BED006CD909 /* GiphyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyCoordinator.swift; sourceTree = "<group>"; };
+		4DD6D88127DE4C7E006CD909 /* GiphyViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyViewControllerFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +98,9 @@
 		4D1E198327DE03060030F01D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4DD6D87827DE4B93006CD909 /* Coordinator */,
 				4D1E198D27DE06950030F01D /* Entities */,
+				4DD6D87127DE4A9E006CD909 /* Extensions */,
 				4D1E198427DE031F0030F01D /* Networking */,
 			);
 			path = Common;
@@ -156,6 +174,7 @@
 			children = (
 				4D1EBE5B27D66CD1009AA428 /* SceneDelegate.swift */,
 				4D1EBE5927D66CD1009AA428 /* AppDelegate.swift */,
+				4DD6D87D27DE4BAF006CD909 /* AppCoordinator.swift */,
 			);
 			path = AppSetup;
 			sourceTree = "<group>";
@@ -173,8 +192,10 @@
 			isa = PBXGroup;
 			children = (
 				4D1E199127DE32650030F01D /* GiphyCollectionViewCell.swift */,
+				4DD6D87F27DE4BED006CD909 /* GiphyCoordinator.swift */,
 				4D1EBE5D27D66CD1009AA428 /* GiphyViewController.swift */,
-				4D1EBE5F27D66CD1009AA428 /* Main.storyboard */,
+				4DD6D88127DE4C7E006CD909 /* GiphyViewControllerFactory.swift */,
+				4D1EBE5F27D66CD1009AA428 /* Giphy.storyboard */,
 			);
 			path = Giphy;
 			sourceTree = "<group>";
@@ -184,6 +205,25 @@
 			children = (
 			);
 			path = GiphyDetail;
+			sourceTree = "<group>";
+		};
+		4DD6D87127DE4A9E006CD909 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4DD6D87227DE4A9E006CD909 /* UIKit+ReuseIdentifier.swift */,
+				4DD6D87327DE4A9E006CD909 /* UIViewController+Extension.swift */,
+				4DD6D87427DE4A9E006CD909 /* UIStoryboard+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4DD6D87827DE4B93006CD909 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				4DD6D87927DE4B93006CD909 /* BaseCoordinator.swift */,
+				4DD6D87A27DE4B93006CD909 /* Coordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,7 +315,7 @@
 			files = (
 				4D1EBE6627D66CD3009AA428 /* LaunchScreen.storyboard in Resources */,
 				4D1EBE6327D66CD3009AA428 /* Assets.xcassets in Resources */,
-				4D1EBE6127D66CD1009AA428 /* Main.storyboard in Resources */,
+				4D1EBE6127D66CD1009AA428 /* Giphy.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,12 +334,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D1E199227DE32650030F01D /* GiphyCollectionViewCell.swift in Sources */,
+				4DD6D87727DE4A9E006CD909 /* UIStoryboard+Extension.swift in Sources */,
+				4DD6D87C27DE4B93006CD909 /* Coordinator.swift in Sources */,
 				4D1E198C27DE031F0030F01D /* Endpoint.swift in Sources */,
 				4D1E198A27DE031F0030F01D /* NetworkService.swift in Sources */,
 				4D1EBE5E27D66CD1009AA428 /* GiphyViewController.swift in Sources */,
+				4DD6D88227DE4C7E006CD909 /* GiphyViewControllerFactory.swift in Sources */,
+				4DD6D87E27DE4BAF006CD909 /* AppCoordinator.swift in Sources */,
 				4D1E198B27DE031F0030F01D /* Endpoint+GiphyAPI.swift in Sources */,
 				4D1EBE5A27D66CD1009AA428 /* AppDelegate.swift in Sources */,
+				4DD6D87B27DE4B93006CD909 /* BaseCoordinator.swift in Sources */,
+				4DD6D88027DE4BED006CD909 /* GiphyCoordinator.swift in Sources */,
+				4DD6D87527DE4A9E006CD909 /* UIKit+ReuseIdentifier.swift in Sources */,
 				4D1EBE5C27D66CD1009AA428 /* SceneDelegate.swift in Sources */,
+				4DD6D87627DE4A9E006CD909 /* UIViewController+Extension.swift in Sources */,
 				4D1E198927DE031F0030F01D /* URLSession+NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,12 +371,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4D1EBE5F27D66CD1009AA428 /* Main.storyboard */ = {
+		4D1EBE5F27D66CD1009AA428 /* Giphy.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4D1EBE6027D66CD1009AA428 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Giphy.storyboard;
 			sourceTree = "<group>";
 		};
 		4D1EBE6427D66CD3009AA428 /* LaunchScreen.storyboard */ = {
@@ -469,7 +517,6 @@
 				INFOPLIST_FILE = GiphyAPITask/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -496,7 +543,6 @@
 				INFOPLIST_FILE = GiphyAPITask/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

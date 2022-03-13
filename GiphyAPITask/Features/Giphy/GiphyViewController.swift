@@ -6,14 +6,8 @@
 //
 
 import UIKit
-import GiphyUISDK
 import Combine
 
-/*
- "images":{
-    "original":{
-            "url":{
- */
 struct Giphy: Decodable {
     let id: String
     let url: String
@@ -67,10 +61,29 @@ class GiphyUseCase {
 }
 
 class GiphyViewController: UICollectionViewController {
-    let usecase = GiphyUseCase()
+    let usecase: GiphyUseCase
     var cancellable: AnyCancellable?
     @IBOutlet weak var collectionViewFlowLayout: UICollectionViewFlowLayout!
     var imageURLs: [String] = []
+    
+    // MARK: Life Cycle
+    
+    init?(coder: NSCoder, usecase: GiphyUseCase) {
+        //self.viewModel = viewModel
+        self.usecase = usecase
+        super.init(coder: coder)
+        //bindViewModel()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("You must create this view controller with a user.")
+    }
+    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        configureUI()
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -94,71 +107,8 @@ class GiphyViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GiphyCollectionViewCell", for: indexPath) as! GiphyCollectionViewCell
+        let cell: GiphyCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
         cell.configure(with: imageURLs[indexPath.row])
         return cell
     }
-    
-    @objc func gifButtonTapped() {
-//        let giphy = GiphyViewController()
-//        giphy.theme = GPHTheme(type: .dark)
-//        giphy.mediaTypeConfig = .
-//        GiphyViewController.trayHeightMultiplier = 0.7
-//        giphy.showConfirmationScreen = settingsViewController.confirmationScreen == .on
-//        giphy.shouldLocalizeSearch = true
-//        giphy.delegate = self
-//        giphy.dimBackground = true
-//        giphy.enableDynamicText = settingsViewController.dynamicResultsInTextSearch == .on
-//         
-//        giphy.modalPresentationStyle = .overCurrentContext
-//        
-//        if let contentType = self.selectedContentType {
-//            giphy.selectedContentType = contentType
-//        }
-//        if let user = self.showMoreByUser {
-//            giphy.showMoreByUser = user
-//            self.showMoreByUser = nil
-//        }
-//        
-//        present(giphy, animated: true, completion: nil)
-    }
-    
 }
-
-//extension GiphyViewController: GiphyDelegate {
-//    func didSelectMedia(giphyViewController: GiphyViewController, media: GPHMedia, contentType: GPHContentType) {
-//        print(contentType.rawValue)
-//    }
-//    
-//    func didSearch(for term: String) {
-//        print("your user made a search! ", term)
-//    }
-//    
-//    func didSelectMedia(giphyViewController: GiphyViewController, media: GPHMedia) {
-////        showMoreByUser = nil
-////        self.selectedContentType = giphyViewController.selectedContentType
-////        giphyViewController.dismiss(animated: true, completion: { [weak self] in
-////            self?.addMessageToConversation(text: nil, media: media)
-////            guard self?.conversation.count ?? 0 > 7 else { return }
-////            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [weak self] in
-////                guard let self = self else { return }
-////                let response = self.conversationResponses[self.currentConversationResponse % self.conversationResponses.count]
-////                self.currentConversationResponse += 1
-////                self.addMessageToConversation(text: response, user: .abraHam)
-////            }
-////        })
-//        GPHCache.shared.clear()
-//    }
-//    
-//    func didDismiss(controller: GiphyViewController?) {
-//        GPHCache.shared.clear()
-//    }
-//}
-//
-//extension GiphyViewController: GPHMediaViewDelegate {
-//    func didPressMoreByUser(_ user: String) {
-//        //showMoreByUser = user
-//        gifButtonTapped()
-//    }
-//}
-

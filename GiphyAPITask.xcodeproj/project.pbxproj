@@ -34,6 +34,8 @@
 		4DD6D88A27DEF0C5006CD909 /* GiphyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D88927DEF0C5006CD909 /* GiphyResponse.swift */; };
 		4DD6D88D27DEF185006CD909 /* GiphyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D88C27DEF185006CD909 /* GiphyUseCase.swift */; };
 		4DD6D88F27DEF47D006CD909 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D88E27DEF47D006CD909 /* Page.swift */; };
+		4DD6D89127DEF7CA006CD909 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D89027DEF7CA006CD909 /* AppDIContainer.swift */; };
+		4DD6D89427DEF7FC006CD909 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 4DD6D89327DEF7FC006CD909 /* Swinject */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,7 @@
 		4DD6D88927DEF0C5006CD909 /* GiphyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyResponse.swift; sourceTree = "<group>"; };
 		4DD6D88C27DEF185006CD909 /* GiphyUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyUseCase.swift; sourceTree = "<group>"; };
 		4DD6D88E27DEF47D006CD909 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		4DD6D89027DEF7CA006CD909 /* AppDIContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D1E199027DE248C0030F01D /* NukeFLAnimatedImagePlugin in Frameworks */,
+				4DD6D89427DEF7FC006CD909 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +196,7 @@
 				4D1EBE5B27D66CD1009AA428 /* SceneDelegate.swift */,
 				4D1EBE5927D66CD1009AA428 /* AppDelegate.swift */,
 				4DD6D87D27DE4BAF006CD909 /* AppCoordinator.swift */,
+				4DD6D89027DEF7CA006CD909 /* AppDIContainer.swift */,
 			);
 			path = AppSetup;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 			name = GiphyAPITask;
 			packageProductDependencies = (
 				4D1E198F27DE248C0030F01D /* NukeFLAnimatedImagePlugin */,
+				4DD6D89327DEF7FC006CD909 /* Swinject */,
 			);
 			productName = GiphyAPITask;
 			productReference = 4D1EBE5627D66CD1009AA428 /* GiphyAPITask.app */;
@@ -323,6 +329,7 @@
 			mainGroup = 4D1EBE4D27D66CD1009AA428;
 			packageReferences = (
 				4D1E198E27DE248C0030F01D /* XCRemoteSwiftPackageReference "Nuke-FLAnimatedImage-Plugin" */,
+				4DD6D89227DEF7FC006CD909 /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = 4D1EBE5727D66CD1009AA428 /* Products */;
 			projectDirPath = "";
@@ -375,6 +382,7 @@
 				4DD6D88827DEF08E006CD909 /* Pagination.swift in Sources */,
 				4D1EBE5A27D66CD1009AA428 /* AppDelegate.swift in Sources */,
 				4DD6D88D27DEF185006CD909 /* GiphyUseCase.swift in Sources */,
+				4DD6D89127DEF7CA006CD909 /* AppDIContainer.swift in Sources */,
 				4DD6D87B27DE4B93006CD909 /* BaseCoordinator.swift in Sources */,
 				4DD6D88027DE4BED006CD909 /* GiphyCoordinator.swift in Sources */,
 				4DD6D87527DE4A9E006CD909 /* UIKit+ReuseIdentifier.swift in Sources */,
@@ -669,6 +677,14 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		4DD6D89227DEF7FC006CD909 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -676,6 +692,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4D1E198E27DE248C0030F01D /* XCRemoteSwiftPackageReference "Nuke-FLAnimatedImage-Plugin" */;
 			productName = NukeFLAnimatedImagePlugin;
+		};
+		4DD6D89327DEF7FC006CD909 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4DD6D89227DEF7FC006CD909 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

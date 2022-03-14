@@ -8,11 +8,11 @@
 import UIKit
 
 final class GiphyViewControllerFactory {
-    func makeStockViewController() -> GiphyViewController? {
+    func makeGiphyViewController() -> GiphyViewController? {
         let storyboard = UIStoryboard(name: .giphy)
-        //let useCase: StockUseCase = DIContainer.resolve()
+        let useCase: GiphyUseCase = DIContainer.resolve()
         let controller = storyboard.instantiateInitialViewController { coder in
-            GiphyViewController(coder: coder, viewModel: .init(useCase: NetworkGiphyUseCase()))
+            GiphyViewController(coder: coder, viewModel: .init(useCase: useCase))
         }
         
         return controller

@@ -10,7 +10,7 @@ import UIKit
 final class GiphyCoordinator: BaseCoordinator<UINavigationController> {
     override func start() {
         let factory = GiphyViewControllerFactory()
-        guard let stockViewController = factory.makeStockViewController() else {
+        guard let stockViewController = factory.makeGiphyViewController() else {
             return assertionFailure()
         }
         

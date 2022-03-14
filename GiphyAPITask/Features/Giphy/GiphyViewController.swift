@@ -11,7 +11,7 @@ import Combine
 final class GiphyViewController: UICollectionViewController {
     private var bindingCancellable: AnyCancellable?
     private let viewModel: GiphyViewModel
-    
+    private let scrollingSubject = PassthroughSubject<Bool, Never>()
     private lazy var dataSource = makeDataSource()
     
     // MARK: Life Cycle
@@ -38,6 +38,14 @@ final class GiphyViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.didSelectRow(atIndex: indexPath.row)
+    }
+    
+    override func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        scrollingSubject.send(true)
+    }
+    
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        scrollingSubject.send(false)
     }
     
     // MARK: Private Methods
@@ -71,9 +79,9 @@ fileprivate extension GiphyViewController {
     func makeDataSource() -> UICollectionViewDiffableDataSource<Section, GiphyRowViewModel> {
         return UICollectionViewDiffableDataSource(
             collectionView: collectionView,
-            cellProvider: {  collectionView, indexPath, row in
+            cellProvider: {[scrollingSubject]  collectionView, indexPath, row in
                 let cell: GiphyCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
-                cell.configure(with: row)
+                cell.configure(with: row, isScrolling: scrollingSubject.share().eraseToAnyPublisher())
                 return cell
             }
         )

@@ -8,31 +8,13 @@
 import Combine
 import Foundation
 
-struct GiphyRowViewModel {
-    let id: String
-    let url: URL?
-}
-
-extension GiphyRowViewModel: Hashable {
-//    static func == (lhs: GiphyRowViewModel, rhs: GiphyRowViewModel) -> Bool {
-//            return lhs.id == rhs.id
-//        }
-//
-//    func hash(into hasher: inout Hasher) {
-//            hasher.combine(id)
-//        }
-}
-
-extension GiphyRowViewModel {
-    init(_ giphy: Giphy) {
-        self.id = giphy.id
-        self.url = .init(string: giphy.url)
-    }
-}
-
 enum GiphyViewState {
     case message(String)
     case showRows([GiphyRowViewModel])
+}
+
+protocol GiphyNavigator {
+    func showDetail(with giphy: Giphy)
 }
 
 class GiphyViewModel {
@@ -45,19 +27,35 @@ class GiphyViewModel {
     private var cancellable = Set<AnyCancellable>()
     private var totalRows: [GiphyRowViewModel] = []
     private let useCase: GiphyUseCase
+    private let navigator: GiphyNavigator
     private let offset = 25
     private var currentPageNo = 0
     private let maxPageLimit = 20
     private var isLoading = false
     
     
-    init(useCase: GiphyUseCase) {
+    init(useCase: GiphyUseCase, navigator: GiphyNavigator) {
         self.useCase = useCase
+        self.navigator = navigator
     }
+    
+    // MARK: - Public Methods
     
     func viewDidLoad() {
         fetchImages()
     }
+    
+    func willDisplayRow(atIndex index: Int) {
+        if isLoading == false, index + 1 == totalRows.count, currentPageNo <= maxPageLimit {
+            fetchImages()
+        }
+    }
+    
+    func didSelectRow(atIndex index: Int) {
+        navigator.showDetail(with: totalRows[index].giphy)
+    }
+    
+    // MARK: - Private Methods
     
     private func makePage() -> Page {
         .init(limit: offset, offset: offset * currentPageNo)
@@ -87,11 +85,5 @@ class GiphyViewModel {
         let rows = gifs.map(GiphyRowViewModel.init)
         totalRows += rows
         outputSubject.send(.showRows(totalRows))
-    }
-    
-    func willDisplayRow(atIndex index: Int) {
-        if isLoading == false, index + 1 == totalRows.count, currentPageNo <= maxPageLimit {
-            fetchImages()
-        }
     }
 }

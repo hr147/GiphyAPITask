@@ -36,6 +36,11 @@
 		4DD6D88F27DEF47D006CD909 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D88E27DEF47D006CD909 /* Page.swift */; };
 		4DD6D89127DEF7CA006CD909 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D89027DEF7CA006CD909 /* AppDIContainer.swift */; };
 		4DD6D89427DEF7FC006CD909 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 4DD6D89327DEF7FC006CD909 /* Swinject */; };
+		4DD6D89627DEF8D6006CD909 /* GiphyDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D89527DEF8D6006CD909 /* GiphyDetail.storyboard */; };
+		4DD6D89827DEF913006CD909 /* GiphyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D89727DEF913006CD909 /* GiphyDetailViewController.swift */; };
+		4DD6D89A27DEF93F006CD909 /* GiphyDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D89927DEF93F006CD909 /* GiphyDetailViewModel.swift */; };
+		4DD6D89D27DF0C8B006CD909 /* UIImageView+Nuke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D89C27DF0C8B006CD909 /* UIImageView+Nuke.swift */; };
+		4DD6D8A227DF164D006CD909 /* GiphyRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D8A127DF164D006CD909 /* GiphyRowViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +84,11 @@
 		4DD6D88C27DEF185006CD909 /* GiphyUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyUseCase.swift; sourceTree = "<group>"; };
 		4DD6D88E27DEF47D006CD909 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		4DD6D89027DEF7CA006CD909 /* AppDIContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
+		4DD6D89527DEF8D6006CD909 /* GiphyDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GiphyDetail.storyboard; sourceTree = "<group>"; };
+		4DD6D89727DEF913006CD909 /* GiphyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyDetailViewController.swift; sourceTree = "<group>"; };
+		4DD6D89927DEF93F006CD909 /* GiphyDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyDetailViewModel.swift; sourceTree = "<group>"; };
+		4DD6D89C27DF0C8B006CD909 /* UIImageView+Nuke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Nuke.swift"; sourceTree = "<group>"; };
+		4DD6D8A127DF164D006CD909 /* GiphyRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyRowViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +124,7 @@
 		4D1E198327DE03060030F01D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4DD6D89B27DF0C50006CD909 /* Wrappers */,
 				4DD6D88B27DEF157006CD909 /* UseCase */,
 				4DD6D87827DE4B93006CD909 /* Coordinator */,
 				4D1E198D27DE06950030F01D /* Entities */,
@@ -213,8 +224,8 @@
 		4DD6D86F27DE48F2006CD909 /* Giphy */ = {
 			isa = PBXGroup;
 			children = (
+				4DD6D8A027DF1620006CD909 /* Cell */,
 				4D1EBE5F27D66CD1009AA428 /* Giphy.storyboard */,
-				4D1E199127DE32650030F01D /* GiphyCollectionViewCell.swift */,
 				4DD6D87F27DE4BED006CD909 /* GiphyCoordinator.swift */,
 				4D1EBE5D27D66CD1009AA428 /* GiphyViewController.swift */,
 				4DD6D88127DE4C7E006CD909 /* GiphyViewControllerFactory.swift */,
@@ -226,6 +237,9 @@
 		4DD6D87027DE4902006CD909 /* GiphyDetail */ = {
 			isa = PBXGroup;
 			children = (
+				4DD6D89527DEF8D6006CD909 /* GiphyDetail.storyboard */,
+				4DD6D89727DEF913006CD909 /* GiphyDetailViewController.swift */,
+				4DD6D89927DEF93F006CD909 /* GiphyDetailViewModel.swift */,
 			);
 			path = GiphyDetail;
 			sourceTree = "<group>";
@@ -255,6 +269,23 @@
 				4DD6D88C27DEF185006CD909 /* GiphyUseCase.swift */,
 			);
 			path = UseCase;
+			sourceTree = "<group>";
+		};
+		4DD6D89B27DF0C50006CD909 /* Wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				4DD6D89C27DF0C8B006CD909 /* UIImageView+Nuke.swift */,
+			);
+			path = Wrappers;
+			sourceTree = "<group>";
+		};
+		4DD6D8A027DF1620006CD909 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4D1E199127DE32650030F01D /* GiphyCollectionViewCell.swift */,
+				4DD6D8A127DF164D006CD909 /* GiphyRowViewModel.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D1EBE6627D66CD3009AA428 /* LaunchScreen.storyboard in Resources */,
+				4DD6D89627DEF8D6006CD909 /* GiphyDetail.storyboard in Resources */,
 				4D1EBE6327D66CD3009AA428 /* Assets.xcassets in Resources */,
 				4D1EBE6127D66CD1009AA428 /* Giphy.storyboard in Resources */,
 			);
@@ -375,17 +407,21 @@
 				4DD6D88F27DEF47D006CD909 /* Page.swift in Sources */,
 				4D1E198A27DE031F0030F01D /* NetworkService.swift in Sources */,
 				4D1EBE5E27D66CD1009AA428 /* GiphyViewController.swift in Sources */,
+				4DD6D89D27DF0C8B006CD909 /* UIImageView+Nuke.swift in Sources */,
 				4DD6D88227DE4C7E006CD909 /* GiphyViewControllerFactory.swift in Sources */,
 				4DD6D87E27DE4BAF006CD909 /* AppCoordinator.swift in Sources */,
 				4DD6D88627DEF05A006CD909 /* Giphy.swift in Sources */,
 				4D1E198B27DE031F0030F01D /* Endpoint+GiphyAPI.swift in Sources */,
+				4DD6D89827DEF913006CD909 /* GiphyDetailViewController.swift in Sources */,
 				4DD6D88827DEF08E006CD909 /* Pagination.swift in Sources */,
+				4DD6D8A227DF164D006CD909 /* GiphyRowViewModel.swift in Sources */,
 				4D1EBE5A27D66CD1009AA428 /* AppDelegate.swift in Sources */,
 				4DD6D88D27DEF185006CD909 /* GiphyUseCase.swift in Sources */,
 				4DD6D89127DEF7CA006CD909 /* AppDIContainer.swift in Sources */,
 				4DD6D87B27DE4B93006CD909 /* BaseCoordinator.swift in Sources */,
 				4DD6D88027DE4BED006CD909 /* GiphyCoordinator.swift in Sources */,
 				4DD6D87527DE4A9E006CD909 /* UIKit+ReuseIdentifier.swift in Sources */,
+				4DD6D89A27DEF93F006CD909 /* GiphyDetailViewModel.swift in Sources */,
 				4D1EBE5C27D66CD1009AA428 /* SceneDelegate.swift in Sources */,
 				4DD6D87627DE4A9E006CD909 /* UIViewController+Extension.swift in Sources */,
 				4D1E198927DE031F0030F01D /* URLSession+NetworkService.swift in Sources */,

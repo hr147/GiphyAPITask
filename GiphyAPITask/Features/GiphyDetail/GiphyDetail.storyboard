@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Giphy Detail View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="GiphyDetailViewController" customModule="GiphyAPITask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="e8h-li-Oaw">
+                                <rect key="frame" x="24" y="251.5" width="366" height="393.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WV-tC-x8X">
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="I3M-qa-E2s" customClass="FLAnimatedImageView">
+                                        <rect key="frame" x="0.0" y="27.5" width="366" height="366"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="I3M-qa-E2s" secondAttribute="height" multiplier="1:1" id="QKB-2j-OKn"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="e8h-li-Oaw" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="YgS-1m-lrY"/>
+                            <constraint firstItem="e8h-li-Oaw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="YtE-kQ-3XX"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="e8h-li-Oaw" secondAttribute="trailing" constant="24" id="xH5-q3-R2y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="animatedImageView" destination="I3M-qa-E2s" id="bpy-N0-iEv"/>
+                        <outlet property="titleLabel" destination="3WV-tC-x8X" id="wyP-6S-sRd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="91"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="placeholder" width="150" height="150"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

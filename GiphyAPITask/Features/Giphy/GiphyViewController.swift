@@ -46,8 +46,8 @@ final class GiphyViewController: UICollectionViewController {
     
     private func render(_ state: GiphyViewState) {
         switch state {
-        case .message(let string):
-            break
+        case let .message(message):
+            presentAlert(message)
         case let .showRows(rows):
             update(with: rows)
         }
@@ -55,6 +55,10 @@ final class GiphyViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         viewModel.willDisplayRow(atIndex: indexPath.row)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didSelectRow(atIndex: indexPath.row)
     }
 }
 

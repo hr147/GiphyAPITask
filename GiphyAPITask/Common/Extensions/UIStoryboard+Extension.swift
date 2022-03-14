@@ -3,6 +3,7 @@ import UIKit
 extension UIStoryboard {
     enum Name: String {
         case giphy = "Giphy"
+        case giphyDetail = "GiphyDetail"
     }
     
     convenience init(name: Name, bundle: Bundle? = nil) {

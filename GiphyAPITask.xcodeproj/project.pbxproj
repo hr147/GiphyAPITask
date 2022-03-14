@@ -41,6 +41,7 @@
 		4DD6D89A27DEF93F006CD909 /* GiphyDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D89927DEF93F006CD909 /* GiphyDetailViewModel.swift */; };
 		4DD6D89D27DF0C8B006CD909 /* UIImageView+Nuke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D89C27DF0C8B006CD909 /* UIImageView+Nuke.swift */; };
 		4DD6D8A227DF164D006CD909 /* GiphyRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D8A127DF164D006CD909 /* GiphyRowViewModel.swift */; };
+		4DD6D8A427DF1DC9006CD909 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DD6D8A327DF1DC9006CD909 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		4DD6D89927DEF93F006CD909 /* GiphyDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyDetailViewModel.swift; sourceTree = "<group>"; };
 		4DD6D89C27DF0C8B006CD909 /* UIImageView+Nuke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Nuke.swift"; sourceTree = "<group>"; };
 		4DD6D8A127DF164D006CD909 /* GiphyRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyRowViewModel.swift; sourceTree = "<group>"; };
+		4DD6D8A327DF1DC9006CD909 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				4D1EBE6727D66CD3009AA428 /* Info.plist */,
 				4D1EBE6427D66CD3009AA428 /* LaunchScreen.storyboard */,
 				4D1EBE6227D66CD3009AA428 /* Assets.xcassets */,
+				4DD6D8A327DF1DC9006CD909 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DD6D8A427DF1DC9006CD909 /* Localizable.strings in Resources */,
 				4D1EBE6627D66CD3009AA428 /* LaunchScreen.storyboard in Resources */,
 				4DD6D89627DEF8D6006CD909 /* GiphyDetail.storyboard in Resources */,
 				4D1EBE6327D66CD3009AA428 /* Assets.xcassets in Resources */,

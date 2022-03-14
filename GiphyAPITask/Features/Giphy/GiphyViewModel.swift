@@ -18,7 +18,7 @@ protocol GiphyNavigator {
 }
 
 class GiphyViewModel {
-    let screenTitle = NSLocalizedString("weather_screen_title", comment: "")
+    let screenTitle = NSLocalizedString("giphy_screen_title", comment: "")
     private(set) lazy var output = outputSubject.eraseToAnyPublisher()
     
     //MARK: - Private Properties

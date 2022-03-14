@@ -189,8 +189,8 @@
 			children = (
 				4DD6D86D27DE483A006CD909 /* AppSetup */,
 				4D1E198327DE03060030F01D /* Common */,
-				4D1E198227DE02F00030F01D /* Resources */,
 				4DD6D86E27DE4854006CD909 /* Features */,
+				4D1E198227DE02F00030F01D /* Resources */,
 			);
 			path = GiphyAPITask;
 			sourceTree = "<group>";

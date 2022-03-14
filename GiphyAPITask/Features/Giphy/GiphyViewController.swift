@@ -9,7 +9,6 @@ import UIKit
 import Combine
 
 final class GiphyViewController: UICollectionViewController {
-    @IBOutlet weak var collectionViewFlowLayout: UICollectionViewFlowLayout!
     private var bindingCancellable: AnyCancellable?
     private let viewModel: GiphyViewModel
     
@@ -33,6 +32,16 @@ final class GiphyViewController: UICollectionViewController {
         viewModel.viewDidLoad()
     }
     
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        viewModel.willDisplayRow(atIndex: indexPath.row)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didSelectRow(atIndex: indexPath.row)
+    }
+    
+    // MARK: Private Methods
+    
     private func configureUI() {
         title = viewModel.screenTitle
         collectionView.dataSource = dataSource
@@ -51,14 +60,6 @@ final class GiphyViewController: UICollectionViewController {
         case let .showRows(rows):
             update(with: rows)
         }
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        viewModel.willDisplayRow(atIndex: indexPath.row)
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.didSelectRow(atIndex: indexPath.row)
     }
 }
 

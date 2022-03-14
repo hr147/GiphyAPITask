@@ -28,6 +28,8 @@ final class GiphyDetailViewController: UIViewController {
         configureUI()
     }
     
+    // MARK: Private Methods
+    
     private func configureUI() {
         titleLabel.text = viewModel.imageTitle
         animatedImageView.loadAnimatedImage(with: viewModel.imageURL, placeHolderImageName: "placeholder")

@@ -28,6 +28,12 @@
 		4DD6D87E27DE4BAF006CD909 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D87D27DE4BAF006CD909 /* AppCoordinator.swift */; };
 		4DD6D88027DE4BED006CD909 /* GiphyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D87F27DE4BED006CD909 /* GiphyCoordinator.swift */; };
 		4DD6D88227DE4C7E006CD909 /* GiphyViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D88127DE4C7E006CD909 /* GiphyViewControllerFactory.swift */; };
+		4DD6D88427DE4EBC006CD909 /* GiphyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D88327DE4EBC006CD909 /* GiphyViewModel.swift */; };
+		4DD6D88627DEF05A006CD909 /* Giphy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D88527DEF05A006CD909 /* Giphy.swift */; };
+		4DD6D88827DEF08E006CD909 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D88727DEF08E006CD909 /* Pagination.swift */; };
+		4DD6D88A27DEF0C5006CD909 /* GiphyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D88927DEF0C5006CD909 /* GiphyResponse.swift */; };
+		4DD6D88D27DEF185006CD909 /* GiphyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D88C27DEF185006CD909 /* GiphyUseCase.swift */; };
+		4DD6D88F27DEF47D006CD909 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD6D88E27DEF47D006CD909 /* Page.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +70,12 @@
 		4DD6D87D27DE4BAF006CD909 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		4DD6D87F27DE4BED006CD909 /* GiphyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyCoordinator.swift; sourceTree = "<group>"; };
 		4DD6D88127DE4C7E006CD909 /* GiphyViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyViewControllerFactory.swift; sourceTree = "<group>"; };
+		4DD6D88327DE4EBC006CD909 /* GiphyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyViewModel.swift; sourceTree = "<group>"; };
+		4DD6D88527DEF05A006CD909 /* Giphy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Giphy.swift; sourceTree = "<group>"; };
+		4DD6D88727DEF08E006CD909 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
+		4DD6D88927DEF0C5006CD909 /* GiphyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyResponse.swift; sourceTree = "<group>"; };
+		4DD6D88C27DEF185006CD909 /* GiphyUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyUseCase.swift; sourceTree = "<group>"; };
+		4DD6D88E27DEF47D006CD909 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +110,7 @@
 		4D1E198327DE03060030F01D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4DD6D88B27DEF157006CD909 /* UseCase */,
 				4DD6D87827DE4B93006CD909 /* Coordinator */,
 				4D1E198D27DE06950030F01D /* Entities */,
 				4DD6D87127DE4A9E006CD909 /* Extensions */,
@@ -120,6 +133,10 @@
 		4D1E198D27DE06950030F01D /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				4DD6D88527DEF05A006CD909 /* Giphy.swift */,
+				4DD6D88727DEF08E006CD909 /* Pagination.swift */,
+				4DD6D88927DEF0C5006CD909 /* GiphyResponse.swift */,
+				4DD6D88E27DEF47D006CD909 /* Page.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -191,11 +208,12 @@
 		4DD6D86F27DE48F2006CD909 /* Giphy */ = {
 			isa = PBXGroup;
 			children = (
+				4D1EBE5F27D66CD1009AA428 /* Giphy.storyboard */,
 				4D1E199127DE32650030F01D /* GiphyCollectionViewCell.swift */,
 				4DD6D87F27DE4BED006CD909 /* GiphyCoordinator.swift */,
 				4D1EBE5D27D66CD1009AA428 /* GiphyViewController.swift */,
 				4DD6D88127DE4C7E006CD909 /* GiphyViewControllerFactory.swift */,
-				4D1EBE5F27D66CD1009AA428 /* Giphy.storyboard */,
+				4DD6D88327DE4EBC006CD909 /* GiphyViewModel.swift */,
 			);
 			path = Giphy;
 			sourceTree = "<group>";
@@ -224,6 +242,14 @@
 				4DD6D87A27DE4B93006CD909 /* Coordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		4DD6D88B27DEF157006CD909 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				4DD6D88C27DEF185006CD909 /* GiphyUseCase.swift */,
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,16 +359,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DD6D88427DE4EBC006CD909 /* GiphyViewModel.swift in Sources */,
 				4D1E199227DE32650030F01D /* GiphyCollectionViewCell.swift in Sources */,
+				4DD6D88A27DEF0C5006CD909 /* GiphyResponse.swift in Sources */,
 				4DD6D87727DE4A9E006CD909 /* UIStoryboard+Extension.swift in Sources */,
 				4DD6D87C27DE4B93006CD909 /* Coordinator.swift in Sources */,
 				4D1E198C27DE031F0030F01D /* Endpoint.swift in Sources */,
+				4DD6D88F27DEF47D006CD909 /* Page.swift in Sources */,
 				4D1E198A27DE031F0030F01D /* NetworkService.swift in Sources */,
 				4D1EBE5E27D66CD1009AA428 /* GiphyViewController.swift in Sources */,
 				4DD6D88227DE4C7E006CD909 /* GiphyViewControllerFactory.swift in Sources */,
 				4DD6D87E27DE4BAF006CD909 /* AppCoordinator.swift in Sources */,
+				4DD6D88627DEF05A006CD909 /* Giphy.swift in Sources */,
 				4D1E198B27DE031F0030F01D /* Endpoint+GiphyAPI.swift in Sources */,
+				4DD6D88827DEF08E006CD909 /* Pagination.swift in Sources */,
 				4D1EBE5A27D66CD1009AA428 /* AppDelegate.swift in Sources */,
+				4DD6D88D27DEF185006CD909 /* GiphyUseCase.swift in Sources */,
 				4DD6D87B27DE4B93006CD909 /* BaseCoordinator.swift in Sources */,
 				4DD6D88027DE4BED006CD909 /* GiphyCoordinator.swift in Sources */,
 				4DD6D87527DE4A9E006CD909 /* UIKit+ReuseIdentifier.swift in Sources */,

@@ -8,107 +8,78 @@
 import UIKit
 import Combine
 
-struct Giphy: Decodable {
-    let id: String
-    let url: String
-    
-    enum CodingKeys: String, CodingKey {
-        case id, images
-    }
-    
-    struct Images: Decodable {
-        let original: Original
-        
-        struct Original: Decodable {
-            let url: String
-        }
-    }
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        id = try container.decode(String.self, forKey: .id)
-        let images = try container.decode(Images.self, forKey: .images)
-        url = images.original.url
-    }
-}
-/*
- "pagination":{
- "total_count":2446
- "count":25
- "offset":0
- 
- */
-struct Pagination: Decodable {
-    let count: Int
-    let offset: Int
-}
-
-struct GiphyResponse: Decodable {
-    let gifs: [Giphy]
-    let pagination: Pagination
-    
-    enum CodingKeys: String , CodingKey {
-        case gifs = "data", pagination
-    }
-}
-
-class GiphyUseCase {
-    let service: NetworkService = URLSession.shared
-    
-    func fetchImages() -> AnyPublisher<GiphyResponse, Error> {
-        service.publisher(for: .trending(with: .init(limit: 25, offset: 0)))
-    }
-}
-
-class GiphyViewController: UICollectionViewController {
-    let usecase: GiphyUseCase
-    var cancellable: AnyCancellable?
+final class GiphyViewController: UICollectionViewController {
     @IBOutlet weak var collectionViewFlowLayout: UICollectionViewFlowLayout!
-    var imageURLs: [String] = []
+    private var bindingCancellable: AnyCancellable?
+    private let viewModel: GiphyViewModel
+    
+    private lazy var dataSource = makeDataSource()
     
     // MARK: Life Cycle
     
-    init?(coder: NSCoder, usecase: GiphyUseCase) {
-        //self.viewModel = viewModel
-        self.usecase = usecase
+    init?(coder: NSCoder, viewModel: GiphyViewModel) {
+        self.viewModel = viewModel
         super.init(coder: coder)
-        //bindViewModel()
+        bindViewModel()
     }
     
     required init?(coder: NSCoder) {
         fatalError("You must create this view controller with a user.")
     }
     
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        configureUI()
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        cancellable = usecase.fetchImages().sink { completion in
-            print(completion)
-        } receiveValue: {[weak self] response in
-            print(response)
-            DispatchQueue.main.async {
-                self?.imageURLs = response.gifs.map(\.url)
-                self?.collectionView.reloadData()
-            }
+        configureUI()
+        viewModel.viewDidLoad()
+    }
+    
+    private func configureUI() {
+        title = viewModel.screenTitle
+        collectionView.dataSource = dataSource
+    }
+    
+    private func bindViewModel() {
+        bindingCancellable = viewModel.output.sink { [weak self] viewState in
+            self?.render(viewState)
+        }
+    }
+    
+    private func render(_ state: GiphyViewState) {
+        switch state {
+        case .message(let string):
+            break
+        case let .showRows(rows):
+            update(with: rows)
         }
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        viewModel.willDisplayRow(atIndex: indexPath.row)
+    }
+}
+
+fileprivate extension GiphyViewController {
+    enum Section: CaseIterable {
+        case giphy
     }
 
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageURLs.count
+    func makeDataSource() -> UICollectionViewDiffableDataSource<Section, GiphyRowViewModel> {
+        return UICollectionViewDiffableDataSource(
+            collectionView: collectionView,
+            cellProvider: {  collectionView, indexPath, row in
+                let cell: GiphyCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
+                cell.configure(with: row)
+                return cell
+            }
+        )
     }
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: GiphyCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
-        cell.configure(with: imageURLs[indexPath.row])
-        return cell
+
+    func update(with rows: [GiphyRowViewModel], animate: Bool = true) {
+        DispatchQueue.main.async {
+            var snapshot = NSDiffableDataSourceSnapshot<Section, GiphyRowViewModel>()
+            snapshot.appendSections(Section.allCases)
+            snapshot.appendItems(rows, toSection: .giphy)
+            self.dataSource.apply(snapshot, animatingDifferences: animate)
+        }
     }
 }

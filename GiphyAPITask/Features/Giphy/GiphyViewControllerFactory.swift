@@ -12,7 +12,7 @@ final class GiphyViewControllerFactory {
         let storyboard = UIStoryboard(name: .giphy)
         //let useCase: StockUseCase = DIContainer.resolve()
         let controller = storyboard.instantiateInitialViewController { coder in
-            GiphyViewController(coder: coder, usecase: GiphyUseCase())
+            GiphyViewController(coder: coder, viewModel: .init(useCase: NetworkGiphyUseCase()))
         }
         
         return controller

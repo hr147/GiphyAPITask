@@ -12,11 +12,12 @@ import Nuke
 final class GiphyCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak private var giphyImageView: FLAnimatedImageView!
     
-    func configure(with url: String) {
-        guard let url = URL(string: url) else {
+    func configure(with row: GiphyRowViewModel) {
+        guard let url = row.url else {
             giphyImageView.image = UIImage(named: "placeholder")
             return
         }
+        
         let options = ImageLoadingOptions(
             placeholder: UIImage(named: "placeholder"),
             transition: .fadeIn(duration: 0.33)

@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-enum GiphyViewState {
+enum GiphyViewState: Equatable {
     case message(String)
     case showRows([GiphyRowViewModel])
 }
